@@ -2,69 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WanderLite Travels</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Around Bangalore</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>WanderLite Travels</h1>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div id="clock" class="clock"></div>
 
-  <section id="home" class="hero">
-    <div class="container">
-      <h2>Your Adventure Begins Here</h2>
-      <p>Explore exotic places with our curated travel guides and trips.</p>
-    </div>
-  </section>
+  <h1>Explore 10 Beautiful Places Near Bangalore</h1>
+  <div id="welcome-message"></div>
 
-  <section id="destinations" class="container">
-    <h2>Popular Destinations</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://source.unsplash.com/400x250/?paris" alt="Paris">
-        <h3>Paris, France</h3>
-        <p>The city of love and lights awaits you.</p>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x250/?bali" alt="Bali">
-        <h3>Bali, Indonesia</h3>
-        <p>Nature, beaches, and spiritual retreats.</p>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x250/?newyork" alt="New York">
-        <h3>New York, USA</h3>
-        <p>The city that never sleeps!</p>
-      </div>
-    </div>
-  </section>
+  <div>
+    <p>Do you already have a destination in mind?</p>
+    <button onclick="askPreference(true)">Yes</button>
+    <button onclick="askPreference(false)">No</button>
+  </div>
 
-  <section id="about" class="container">
-    <h2>About Us</h2>
-    <p>WanderLite Travels is your gateway to the most memorable adventures around the world. Whether you're a solo explorer or a family of wanderers, we've got something for everyone.</p>
-  </section>
+  <div id="suggestion-area" style="display:none;">
+    <p>Select your favorite climate:</p>
+    <select id="climate">
+      <option value="">--Choose one--</option>
+      <option value="sunny">Sunny</option>
+      <option value="breezy">Breezy</option>
+      <option value="cool">Cool</option>
+      <option value="rainy">Rainy</option>
+      <option value="hill">Hill Station</option>
+      <option value="sea">Sea Side</option>
+    </select>
+    <button onclick="suggestDestination()">Get Suggestion</button>
+  </div>
 
-  <section id="contact" class="container">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+  <div id="result" class="result"></div>
+
+  <div id="map-container" style="margin-top:20px;"></div>
+
+  <div id="booking-form" style="display:none; margin-top: 20px;">
+    <h3>Book Your Trip</h3>
+    <form onsubmit="submitBooking(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <button type="submit">Book Now</button>
     </form>
-  </section>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 WanderLite Travels</p>
-  </footer>
+  <h2>Top Destinations:</h2>
+  <ul id="destination-list"></ul>
+
+  <script src="script.js"></script>
 </body>
 </html>
