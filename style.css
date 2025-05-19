@@ -1,47 +1,33 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
   padding: 20px;
+  background-color: #f0f8ff;
 }
-
-.clock {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #444;
-  margin-bottom: 10px;
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
-
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px #ccc;
+}
 button {
-  margin: 5px;
-  padding: 10px 15px;
-  font-size: 1em;
-  border-radius: 8px;
+  margin-top: 5px;
+  padding: 6px 10px;
   border: none;
-  background-color: #007bff;
+  background-color: #0077cc;
   color: white;
   cursor: pointer;
+  border-radius: 5px;
 }
-
 button:hover {
-  background-color: #0056b3;
+  background-color: #005fa3;
 }
-
-input, select {
-  margin: 5px;
-  padding: 10px;
-  width: 250px;
-}
-
-.result {
-  margin-top: 20px;
-  padding: 10px;
-  font-weight: bold;
-  color: #1d3557;
-}
-
-#map-container iframe {
-  width: 100%;
-  height: 300px;
-  border: 0;
-  margin-top: 10px;
+h1 {
+  color: #004080;
 }
