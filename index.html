@@ -3,50 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Around Bangalore</title>
+  <title>Travel Near Bangalore</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="clock" class="clock"></div>
+  <h1>Explore Destinations Near Bangalore</h1>
 
-  <h1>Explore 10 Beautiful Places Near Bangalore</h1>
-  <div id="welcome-message"></div>
-
-  <div>
-    <p>Do you already have a destination in mind?</p>
-    <button onclick="askPreference(true)">Yes</button>
-    <button onclick="askPreference(false)">No</button>
+  <div class="climate-question">
+    <p>Do you have a destination in mind?</p>
+    <button onclick="askDestination()">Yes</button>
+    <button onclick="suggestClimate()">No, suggest based on climate</button>
   </div>
 
-  <div id="suggestion-area" style="display:none;">
-    <p>Select your favorite climate:</p>
-    <select id="climate">
-      <option value="">--Choose one--</option>
-      <option value="sunny">Sunny</option>
-      <option value="breezy">Breezy</option>
-      <option value="cool">Cool</option>
-      <option value="rainy">Rainy</option>
+  <div id="climate-options" style="display: none;">
+    <p>Select your preferred climate:</p>
+    <select id="climateSelect" onchange="showSuggestions()">
+      <option value="">--Select--</option>
       <option value="hill">Hill Station</option>
-      <option value="sea">Sea Side</option>
+      <option value="sea">Sea</option>
+      <option value="cool">Cool</option>
+      <option value="breezy">Breezy</option>
+      <option value="sunny">Sunny</option>
     </select>
-    <button onclick="suggestDestination()">Get Suggestion</button>
   </div>
 
-  <div id="result" class="result"></div>
-
-  <div id="map-container" style="margin-top:20px;"></div>
-
-  <div id="booking-form" style="display:none; margin-top: 20px;">
-    <h3>Book Your Trip</h3>
-    <form onsubmit="submitBooking(event)">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <button type="submit">Book Now</button>
-    </form>
-  </div>
-
-  <h2>Top Destinations:</h2>
-  <ul id="destination-list"></ul>
+  <div id="destination-list" class="cards-container"></div>
 
   <script src="script.js"></script>
 </body>
